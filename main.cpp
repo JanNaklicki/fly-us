@@ -8,6 +8,13 @@ int main(int argc, char **argv)
 {
     Database database;
     Interface interface;
+    string input;
+    cout<<"Have you created your Database? (Y/n): ";
+    cin >> input;
+    if(input == "n" || input =="N")
+    {
+        database.createDatabase();
+    }
     while (true)
     {
         switch (interface.getCurrnetScreen())
@@ -32,6 +39,4 @@ int main(int argc, char **argv)
             break;
         }
     }
-    // database.createDatabase();
-    // database.createRecord("FLIGHT");
 }

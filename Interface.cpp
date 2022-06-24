@@ -1,5 +1,9 @@
 #include "Interface.h"
 
+int Interface::getCurrnetScreen()
+{
+    return currentScreen;
+}
 // UI
 void Interface::displayInterface(string content)
 {
@@ -50,8 +54,8 @@ void Interface::searchFlight()
     displayHeader("Choose flight");
     displayHeader("FLIGHT\tSOURCE\tDEST\tDEPARTURE\t\tARRIVAL");
     database.queryFlights();
-    displaySpacer("Do you want to buy a ticket?","\n");
-    cin >> input; 
+    displaySpacer("Do you want to buy a ticket?", "\n");
+    cin >> input;
     if (input == "n" || input == "N")
     {
         currentScreen = 0;

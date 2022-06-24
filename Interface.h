@@ -13,6 +13,7 @@ private:
     Database database;
 
 public:
+    int getCurrnetScreen();
     // UI elements
     void displayInterface(string content);
     void displayHeader(string content);
