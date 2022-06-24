@@ -34,28 +34,6 @@ void Database::createDatabase()
         cout << "Tables created Successfully" << endl;
     sqlite3_close(DB);
 }
-int Database::callback(void *data, int argc, char **argv, char **azColName)
-{
-    string values = "";
-    string input;
-    for (int i = 1; i < argc; i++)
-    {
-        cout << "Insert " + string(argv[i]) + ":";
-        cin >> input;
-        values += "'" + input + "'";
-    }
-    string query = "INSERT INTO " + Database::selectedTable + " VALUES (" + values + ");";
-    cout << query;
-    // // exit = sqlite3_exec(DB, query.c_str(), NULL, 0, &messaggeError);
-
-    return 0;
-}
-
-void Database::createRecord(string tableName)
-{
-    string query = "PRAGMA table_info(" + tableName + ");";
-    exit = sqlite3_exec(DB, query.c_str(), callback, 0, &messaggeError);
-}
 void Database::queryFlights()
 {
     string query = "SELECT * FROM FLIGHT;";
